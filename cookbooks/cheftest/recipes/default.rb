@@ -13,3 +13,4 @@ execute "update-upgrade" do
 run_list ["cheftest::default",
               "cheftest::apache",
         ]
+action :converge
