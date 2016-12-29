@@ -11,6 +11,6 @@ execute "update-upgrade" do
   action :run
 end
 
-package "apache2" do
+package "curl" do
   action :install
 end
