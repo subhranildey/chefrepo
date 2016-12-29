@@ -11,6 +11,5 @@ execute "update-upgrade" do
   action :run
 
 run_list ["cheftest::default",
-              "cheftest::apache"
-             ]
-end
+              "cheftest::apache",
+        ]
