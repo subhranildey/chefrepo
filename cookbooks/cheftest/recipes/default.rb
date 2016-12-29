@@ -9,7 +9,6 @@
 execute "update-upgrade" do
   command "apt-get update && apt-get upgrade -y"
   action :run
-end
 
 run_list ["cheftest::default",
               "cheftest::apache"
