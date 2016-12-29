@@ -9,8 +9,4 @@
 execute "update-upgrade" do
   command "apt-get update && apt-get upgrade -y"
   action :run
-
-run_list ["cheftest::default",
-              "cheftest::apache",
-        ]
-action :converge
+end
