@@ -1,4 +1,4 @@
 {
-  "run_list": ["cheftest::default","cheftest::apache"]
+  "run_list": ["cheftest::default","cheftest::apache","cookbook2::default"]
 
 }
