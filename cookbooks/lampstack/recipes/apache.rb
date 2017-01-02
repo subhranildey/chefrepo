@@ -19,4 +19,21 @@ node["lampstack"]["sites"].each do |sitename, data|
     recursive true
   end
 
+execute "enable-sites" do
+    command "a2ensite #{sitename}"
+    action :nothing
+  end
+
+template "/etc/apache2/sites-available/#{sitename}.conf" do
+    source "virtualhosts.erb"
+    mode "0644"
+    variables(
+      :document_root => document_root,
+      :port => data["port"],
+      :serveradmin => data["serveradmin"],
+      :servername => data["servername"]
+    )
+notifies :restart, "service[apache2]"
+  end
+
 end
